@@ -1,8 +1,8 @@
 # Advanced Data Visualization for AI
 
 Interactive data visualization in [Altair](https://altair-viz.github.io/) /
-Vega-Lite — coursework and exercise solutions from the *Advanced Data
-Visualization for Artificial Intelligence* course at Freie Universität Berlin
+Vega-Lite is a coursework and exercise solutions from the *Advanced Data
+Visualization for Artificial Intelligence* course at Freie Universität
 (summer term 2026).
 
 The course works through the grammar of graphics from first principles: marks
@@ -15,9 +15,8 @@ notebooks, the submitted homework, and my solutions to the open exercises.
 ## Homework
 
 The assignments set at the end of the course notebooks. Each asks for the result
-as a stand-alone interactive HTML page, so that — rather than the notebook — is
-the submitted artefact. Open an `.html` file to use the interaction; the `.png`
-is a static preview.
+as a stand-alone interactive HTML page. Open an `.html` file to use the interaction; the `.png`
+is just a static preview.
 
 | # | Task | Submission |
 |---|---|---|
@@ -26,14 +25,14 @@ is a static preview.
 | 3 | Diverging colour palette on the 2D histogram | [html](homework/homework3_diverging_colour_histogram.html) · [png](homework/homework3_diverging_colour_histogram.png) |
 | 8 | Exploratory analysis of `ori.dat` | pending — dataset not yet available |
 
-**Homework 1** puts a stacked bar chart of models released per region per year
+**Homework 1** stacked bar chart of models released per region per year
 above a horsepower-vs-mileage scatter. An interval selection on the overview
 drives the bars' colour through `alt.condition`, so brushing a period highlights
-it and greys out the rest; a point selection on the scatter drives both opacity
+it and greys out rest; a point selection on the scatter drives both opacity
 and size, so hovering a car emphasises it. Both views carry tooltips.
 
-**Homework 2** concatenates three panels — population, life expectancy and
-fertility, each against year and coloured by country — and adds one shared
+**Homework 2** concatenates three panels ie population, life expectancy and
+fertility, each against year and coloured by country, and adds one shared
 `selection_point` bound to a range slider, so a single control filters all three
 at once.
 
@@ -61,9 +60,7 @@ the sklearn *wine* dataset (178 wines, 13 chemical features, 3 cultivars).
 | 7 | easy | Linking and brushing on the scatter matrix | [png](charts/07_scatter_matrix_brushing.png) · [html](charts/07_scatter_matrix_brushing.html) |
 | 8 | hard | Lower triangle only of the scatter matrix | [png](charts/08_scatter_matrix_lower_triangle.png) · [html](charts/08_scatter_matrix_lower_triangle.html) |
 
-The `.png` files are static previews; the `.html` files are the live charts —
-download and open one to use the hover highlighting (5) and the linked
-brushing (7, 8). A few of the solutions are worth calling out:
+The `.png` files are static previews; the `.html` files are the live charts. A few of the solutions are worth calling out:
 
 **Mutual information (2).** Pearson correlation only sees linear dependence.
 Mutual information sees any dependence, but `sklearn.metrics.mutual_info_score`
@@ -72,7 +69,7 @@ bins first. The diagonal is each feature's own entropy.
 
 **Axis ordering (3).** Axis order decides how many lines cross in a parallel
 coordinates chart. Instead of reordering by hand, the axes are sorted by an
-ANOVA-style ratio — between-class variance over total variance — so the
+ANOVA-style ratio between class variance over total variance,  so the
 features that separate the three cultivars best are leftmost and the class
 bands become visible immediately.
 
@@ -103,16 +100,12 @@ or ship with scikit-learn, so no data files are needed to run the notebooks.
 
 ---
 
-## Running it
+## Running
 
 ```bash
 pip install -r requirements.txt
 jupyter lab
 ```
-
-Charts can be re-exported to `charts/` from the solutions notebook with
-`chart.save("name.html")` and `chart.save("name.png", ppi=150)`; PNG export
-needs `vl-convert-python`.
 
 ---
 
